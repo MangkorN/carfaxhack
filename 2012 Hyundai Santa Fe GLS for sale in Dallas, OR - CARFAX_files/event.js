@@ -1,0 +1,8 @@
+﻿/*<!--*/
+
+(function() {
+var CRITEO_COM_TOKEN="AxFuPIivbOVh9A1iWigZYBKLEsd09F0TKyZCh3vhaAKunGI5SMnDaV1g2yqrnkAKqythLyd+bS8ShWXWx388aQIAAACAeyJvcmlnaW4iOiJodHRwczovL2NyaXRlby5jb206NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY2MTI5OTE5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=",addTrialToken=function(e){var n=document.createElement("meta");n.httpEquiv="origin-trial",n.content=e,document.head.appendChild(n)},tokenAdded=function(){for(var e=0,n=document.getElementsByTagName("meta");e<n.length;e++){var t=n[e];if("origin-trial"===t.httpEquiv&&t.content===CRITEO_COM_TOKEN)return!0}return!1},isChrome=function(){return!!window.chrome};isChrome()&&!tokenAdded()&&addTrialToken(CRITEO_COM_TOKEN);var onLoad=function(e){"complete"===document.readyState?setTimeout(e):window.addEventListener?window.addEventListener("load",e,!1):window.attachEvent("onload",e)},dropIframe=function(e,n){var t=document.createElement("iframe");t.width=t.height="0",t.style.display="none",t.title=n,t.src=e,document.body.appendChild(t)},callFledge=function(e,n,t,d,a){var i=e+"/tagging/advertiser"+"?partnerId="+n+"&uid="+d;t&&(i+="&fpId="+t),a&&(i+="&requestId="+a),onLoad(function(){"joinAdInterestGroup"in navigator&&dropIframe(i,"Criteo Fledge iframe")})};
+callFledge('https://fledge.criteo.com', 15564, '', '9ce40295-8d42-4b62-9bcd-abe36238b38f', '3245d0bb-d42b-4276-a5d6-ba53bca7f394');
+})();
+
+/*-->*/
